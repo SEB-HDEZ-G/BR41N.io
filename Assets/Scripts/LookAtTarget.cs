@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LookAtTarget : MonoBehaviour
 {
     public Transform target;
-    public Vector3 rotationOffset = new Vector3(0, 0, 0);
+    public Vector3 rotationOffset = Vector3.zero;
 
     void Start()
     {
@@ -27,8 +25,13 @@ public class LookAtTarget : MonoBehaviour
     {
         if (target != null)
         {
-            transform.LookAt(target);
-            transform.Rotate(rotationOffset);
+            Vector3 direction = target.position - transform.position;
+            direction.y = 0; // Ignore vertical difference
+            if (direction.sqrMagnitude > 0.001f) // Prevent zero-length vector
+            {
+                Quaternion lookRotation = Quaternion.LookRotation(direction);
+                transform.rotation = lookRotation * Quaternion.Euler(rotationOffset);
+            }
         }
     }
 }
