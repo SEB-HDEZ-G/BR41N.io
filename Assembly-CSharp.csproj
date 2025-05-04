@@ -65,9 +65,16 @@
     <Analyzer Include="D:\Unity\6000.0.40f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Editor 1\MeshColliderAdder.cs" />
+    <Compile Include="Assets\Scripts\LookAtTarget.cs" />
+    <Compile Include="Assets\Scripts\SceneSwitch.cs" />
+    <Compile Include="Assets\Scripts\TimelineTrigger.cs" />
     <Compile Include="Assets\Scripts\Player Movement\PlayerCamera.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\TriggerAnimationAfterDelay.cs" />
+    <Compile Include="Assets\Scripts\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\Player Movement\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\DisappearWhenSeen.cs" />
     <Compile Include="Assets\Scripts\Player Movement\MoveCamara.cs" />
   </ItemGroup>
   <ItemGroup>
